@@ -31,12 +31,11 @@ public class ClienteRest {
 
 	@PutMapping
 	public Cliente alterar(@RequestBody Cliente obj) throws Exception {
-	    if (obj.getId() == null) {
-	        throw new Exception("O ID do cliente deve ser fornecido para a alteração.");
-	    }
-	    return clienteService.alterar(obj);
+		if (obj.getId() == null) {
+			throw new Exception("O ID do cliente deve ser fornecido para a alteração.");
+		}
+		return clienteService.alterar(obj);
 	}
-
 
 	@DeleteMapping(path = "/{id}")
 	public boolean delete(@PathVariable("id") Long id) throws Exception {
@@ -57,10 +56,7 @@ public class ClienteRest {
 
 	@PostMapping(path = "/pesquisarDesc")
 	public List<Cliente> pesquisarPorDescricao(@RequestBody String pesquisa) throws Exception {
-	    return clienteService.pesquisarDesc(pesquisa);
+		return clienteService.pesquisarDesc(pesquisa);
 	}
-
-
-
 
 }
